@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.111.3">
-    <title>Главная страница</title>
+    <title>@yield('title')</title>
 
    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
 
@@ -23,19 +23,19 @@
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                         @auth
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <form action="{{ route('edit', \Illuminate\Support\Facades\Auth::id()) }}" method="GET">
+                                <li class="nav-item" style="display:inline-flex">
+                                    <form action="{{ route('edit', \Illuminate\Support\Facades\Auth::id()) }}" method="GET" style="margin-right: 5px">
                                         @csrf
-                                        <input class="btn btn-outline-primary" type="submit" value="Edit">
+                                        <input class="btn btn-outline-primary" type="submit" value="Обновить персональные данные">
                                     </form>
-                                    <form action="{{ route('delete', \Illuminate\Support\Facades\Auth::id()) }}" method="POST">
+                                    <form action="{{ route('delete', \Illuminate\Support\Facades\Auth::id()) }}" method="POST" style="margin-right: 5px">
                                         @csrf
                                         @method('DELETE')
-                                        <input class="btn btn-outline-primary" type="submit" value="Delete">
+                                        <input class="btn btn-outline-primary" type="submit" value="Удалить профиль">
                                     </form>
-                                    <form action="{{ route('logout') }}" method="POST">
+                                    <form action="{{ route('logout') }}" method="POST" style="margin-right: 5px">
                                         @csrf
-                                        <input class="btn btn-outline-primary" type="submit" value="Exit">
+                                        <input class="btn btn-outline-primary" type="submit" value="Выйти">
                                     </form>
                             </ul>
                         @else

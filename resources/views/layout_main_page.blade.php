@@ -24,18 +24,9 @@
                         @auth
                             <ul class="navbar-nav">
                                 <li class="nav-item" style="display:inline-flex">
-                                    <form action="{{ route('edit', \Illuminate\Support\Facades\Auth::id()) }}" method="GET" style="margin-right: 5px">
+                                    <form action="{{ route('dashboard') }}" method="GET" style="margin-right: 5px">
                                         @csrf
-                                        <input class="btn btn-outline-primary" type="submit" value="Edit">
-                                    </form>
-                                    <form action="{{ route('delete', \Illuminate\Support\Facades\Auth::id()) }}" method="POST" style="margin-right: 5px">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input class="btn btn-outline-primary" type="submit" value="Delete">
-                                    </form>
-                                    <form action="{{ route('logout') }}" method="POST" style="margin-right: 5px">
-                                        @csrf
-                                        <input class="btn btn-outline-primary" type="submit" value="Exit">
+                                        <input class="btn btn-outline-primary" type="submit" value="Список участников конференции">
                                     </form>
                             </ul>
                         @else

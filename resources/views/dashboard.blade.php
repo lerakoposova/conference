@@ -1,6 +1,8 @@
 @extends ("layout")
+@section("title","Список участников конференции")
 @section("content")
     <body>
+    <h1 class="mb-3">Список участников конференции</h1>
     <div class="container">
         <table class="table table-dark table-striped">
             <thead>
